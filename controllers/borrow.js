@@ -4,6 +4,7 @@ import User from '../models/user_schema.js'
 const router =express.Router(); 
 
 export const borrow_amt = async (req, res) => {
+    console.log(req.body);
     const { amount, tenure } = req.body;
     if (!amount || !tenure) {
       return res.status(400).json({ msg: 'Please enter amount and tenure' });

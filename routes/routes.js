@@ -5,6 +5,8 @@ import { login } from '../controllers/login.js';
 import { borrow_amt } from '../controllers/borrow.js';
 import { getuser } from '../controllers/user.js';
 
+
+/* Here I have all routes, also use the Auth middleware to protected routes  */
 const router = express.Router();
 router.post('/signup',signup)
 router.post('/login',login)

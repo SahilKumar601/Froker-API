@@ -10,6 +10,8 @@ export const login= async (req, res) => {
     return res.status(400).json({ msg: 'Invaild Details' });
   }
   try {
+    /* This code snippet is a part of a login function in this first of all we are finding the user then
+      we are comparing the password with hashed password stored in the database using bcrypt */
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ msg: 'User does not exist' });

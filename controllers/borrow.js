@@ -9,6 +9,8 @@ export const borrow_amt = async (req, res) => {
     if (!amount || !tenure) {
       return res.status(400).json({ msg: 'Please enter amount and tenure' });
     }
+    /* Next block of code is handling the calculation borrowing amount functionality. Here's a breakdown of what it
+    does: */
     try {
       const user = await User.findById(req.user.id);
       const interestRate = 0.08;

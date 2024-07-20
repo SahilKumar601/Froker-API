@@ -4,6 +4,7 @@ import User from '../models/user_schema.js'
 
 export const getuser = async (req, res) => {
     try {
+      /* In this code snippet we're giving the infomation to the user also hiding the password*/
       var user = await User.findById(req.user.id);
       user['password'] = '**********'
       res.json(user);
